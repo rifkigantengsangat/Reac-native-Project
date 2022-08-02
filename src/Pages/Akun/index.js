@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,SafeAreaView,ScrollView } from 'react-native'
 import React from 'react'
 
 const Akun = () => {
   return (
-    <View>
-      <Text>Akun</Text>
-    </View>
+   <SafeAreaView style={styles.container}>
+    <ScrollView>
+       
+    </ScrollView>
+   </SafeAreaView>
   )
 }
 
 export default Akun
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container : {
+    flex:1,
+    backgroundColor: 'red'
+  }
+})

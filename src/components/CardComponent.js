@@ -1,28 +1,39 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View,TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
 import washing from '../assets/wash.png'
 import setrikaan from '../assets/setrikaan.png'
 import jemuran from '../assets/jemuran.png'
 import tambah from '../assets/tambah.png';
+import { useNavigation } from '@react-navigation/native';
 const CardComponent = () => {
+    const navigation = useNavigation()
+  
   return (
     <View style={styles.container}>
-   <View style={styles.card}>
-   <Image source={washing} style={styles.image}/>
+        <TouchableWithoutFeedback onPress={()=>navigation.navigate("DetailProd")}>
+   <View style={styles.card} >
+   <Image source={washing} style={styles.image} />
    <Text style={styles.text} >Wash And Iron</Text>
    </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={()=>navigation.navigate("DetailProd")}>
    <View style={styles.card}>
    <Image source={setrikaan} style={styles.image}/>
    <Text style={styles.text} >Ironing</Text>
    </View>
+   </TouchableWithoutFeedback>
+   <TouchableWithoutFeedback onPress={()=>navigation.navigate("DetailProd")}>
    <View style={styles.card}>
    <Image source={jemuran} style={styles.image}/>
    <Text style={styles.text} >Dry Cleaning</Text>
    </View>
+   </TouchableWithoutFeedback>
+   <TouchableWithoutFeedback onPress={()=>navigation.navigate("DetailProd")}>
    <View style={styles.cardPlus}>
    <Image source={tambah} style={styles.image}/>
    <Text style={styles.textTambah} >Laundry</Text>
    </View>
+   </TouchableWithoutFeedback>
     </View>
   )
 }

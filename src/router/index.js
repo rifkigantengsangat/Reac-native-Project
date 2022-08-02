@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Pages/Home'
 import Splash from '../Pages/Splash'
 import Pesanans from '../Pages/Pesanans'
+import DetailProd from '../Pages/DetailProd'
 import Akun from '../Pages/Akun'
 import homeIcon from '../assets/home.png'
 import UserIcon from '../assets/user.png'
@@ -52,6 +53,7 @@ const Router = () => {
     
     <Stack.Screen name="Splash" component={Splash} options={{ headerShown : false}}/>
    <Stack.Screen name="MainApp" component={MainApp} options={{ headerShown : false}}/>
+   <Stack.Screen name="DetailProd" component={DetailProd} options={{ headerShown : false}}/>
    </Stack.Navigator>
   )
 }
