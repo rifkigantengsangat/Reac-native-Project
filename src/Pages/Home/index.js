@@ -4,6 +4,7 @@ import HeaderComponent from '../../components/HeaderComponent'
 import TextHomeComponent from '../../components/TextHomeComponent'
 import TextSubsComponent from '../../components/TextSubsComponent'
 import CardComponent from '../../components/CardComponent'
+
 const Home= () => {
   return (
     <View style={styles.container}>
