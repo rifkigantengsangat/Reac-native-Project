@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -6,16 +6,42 @@ import Home from '../Pages/Home'
 import Splash from '../Pages/Splash'
 import Pesanans from '../Pages/Pesanans'
 import Akun from '../Pages/Akun'
+import homeIcon from '../assets/home.png'
+import UserIcon from '../assets/user.png'
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator();
 
 const MainApp =()=>{
   return(
   
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Pesanans" component={Pesanans} />
-      <Tab.Screen name="Akun" component={Akun} />
+    <Tab.Navigator
+    screenOptions={{
+      tabBarStyle: {
+        backgroundColor: '#F2F2F2',
+      },
+    }}
+    >
+      <Tab.Screen name="Home" component={Home} options={{ 
+        headerShown:false,
+        title : 'Home',
+        tabBarIcon :({})=>{
+          return(
+            <Image source={   homeIcon }/>
+          )
+        }
+       }} />
+      <Tab.Screen name="Akun" component={Akun}  options={{ headerShown : false,
+      title:'Account',
+      tabBarIcon : ()=>{
+        return (
+          <Image source={UserIcon}/>
+        )
+      }
+      
+      }}/>
+      <Tab.Screen name="Pesanans" component={Pesanans} options={{ headerShown : false,
+      
+      }}/>
     </Tab.Navigator>
   
   )

@@ -7,8 +7,8 @@ const Splash = () => {
   return (
     <View style={styles.container}>
      <LogoComponent/>
-     <TextBannerComponent />
-     <RocketComponent/>
+     <TextBannerComponent />  
+    <RocketComponent/>
     </View>
   )
 }
