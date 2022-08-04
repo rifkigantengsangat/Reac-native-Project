@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Image, StyleSheet, Text, View,Button } from 'react-native'
 import React,{useState,useEffect} from 'react'
 import {data} from '../Data'
@@ -10,6 +11,19 @@ const CardDetailComponent = () => {
         return rupiah
     }
     const handleTambah =(cart)=>{
+=======
+import { Image, StyleSheet, Text, View,Button,TouchableOpacity} from 'react-native'
+import React,{useState,useEffect} from 'react'
+import {data} from '../Data'
+import { Store } from '../Context'
+import ButtonCheckOut from './ButtonCheckOut'
+const CardDetailComponent = () => {
+    const {setStore,store,formatRupiah} = Store()
+    const [dataDetail,setDataDetail] = useState(data)
+    const [carts,setCarts] = useState([])
+    const handleTambah =(cart)=>{
+    setCarts([...carts,cart])
+>>>>>>> dev
    const prod = dataDetail.find((ids)=>ids.id === cart.id)
    prod.jumlah+=1
    const updateProd = dataDetail.map((ids)=>{
@@ -17,8 +31,16 @@ const CardDetailComponent = () => {
     return ids
     
    })
+<<<<<<< HEAD
    setDataDetail(updateProd)
     }
+=======
+
+   setDataDetail(updateProd)
+    }
+
+   
+>>>>>>> dev
     const handleKurang =(cart)=>{
         const prod = dataDetail.find((ids)=>ids.id === cart.id)
         if(prod.jumlah == 0){
@@ -34,6 +56,7 @@ const CardDetailComponent = () => {
         setDataDetail(updateProd)
          }
 
+<<<<<<< HEAD
     const hasilkan = (id,harga)=>{
       
     }
@@ -42,6 +65,20 @@ const CardDetailComponent = () => {
     },[dataDetail])
   return (
     <View style={styles.container}>
+=======
+    const handleCheckOut=()=>{
+    const unique = [...new Set(carts)]
+    setStore(unique)
+    console.log(store)
+    }
+    useEffect(()=>{
+
+    },[dataDetail,carts])
+   
+  return (
+    <>
+        <View style={styles.container}>
+>>>>>>> dev
    <View style={styles.containerCard}>
    {dataDetail.map((cards,index)=>{
     return(
@@ -57,22 +94,35 @@ const CardDetailComponent = () => {
         </View>
         <View>
          <View style={styles.dataTambah}>
+<<<<<<< HEAD
         <View style={{ backgroundColor:"red",width:30,borderRadius:20}}>
             <Button 
             title="+"
             onPress={()=>handleTambah(cards)} 
            style={{ color:'red',paddingVertical:20 }}
             />
+=======
+        <View style={{}}>
+           <TouchableOpacity onPress={()=>handleKurang(cards)} style={styles.button}>
+            <Text style={styles.textbutton}>-</Text>
+           </TouchableOpacity>
+>>>>>>> dev
         </View>
         <View>
            <Text style={{ fontWeight: 'bold',fontSize:15,color:'black' }}>{cards.jumlah}</Text>
         </View>
         <View>
+<<<<<<< HEAD
             <Button 
             title="-"
             onPress={()=>handleKurang(cards)}
             style={{ color:'red', backgroundColor:'black'}}
             />
+=======
+        <TouchableOpacity onPress={()=>handleTambah(cards)} style={styles.button}>
+            <Text style={styles.textbutton}>+</Text>
+           </TouchableOpacity>
+>>>>>>> dev
         </View>
          </View>
         </View>
@@ -81,6 +131,12 @@ const CardDetailComponent = () => {
    })}
    </View>
     </View>
+<<<<<<< HEAD
+=======
+    <ButtonCheckOut handleCheckOut={()=>handleCheckOut()}/>
+    </>
+
+>>>>>>> dev
   )
 }
 
@@ -123,6 +179,24 @@ const styles = StyleSheet.create({
         marginRight:20
     },
     button : {
+<<<<<<< HEAD
        
+=======
+       width:30,
+     paddingTop:7,
+       backgroundColor: '#EEEEEE',
+       height:40,
+       borderRadius : 10,
+    },
+    textbutton : {
+        textAlign:'center',
+        color:'black',
+        fontSize:20
+    },
+    buttonCheckout :{
+   flex:1,
+   
+
+>>>>>>> dev
     }
 })
