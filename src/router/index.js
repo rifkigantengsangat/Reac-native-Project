@@ -9,6 +9,7 @@ import DetailProd from '../Pages/DetailProd'
 import Akun from '../Pages/Akun'
 import homeIcon from '../assets/home.png'
 import UserIcon from '../assets/user.png'
+import CheckOut from '../Pages/CheckOut';
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator();
 
@@ -54,6 +55,7 @@ const Router = () => {
     <Stack.Screen name="Splash" component={Splash} options={{ headerShown : false}}/>
    <Stack.Screen name="MainApp" component={MainApp} options={{ headerShown : false}}/>
    <Stack.Screen name="DetailProd" component={DetailProd} options={{ headerShown : false}}/>
+   <Stack.Screen name="CheckOut" component={CheckOut} options={{ headerShown : false}}/>
    </Stack.Navigator>
   )
 }
