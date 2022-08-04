@@ -5,8 +5,6 @@ import back from '../assets/back.png'
 import { useNavigation } from '@react-navigation/native';
 const HeaderDetailComponent = ({}) => {
 const navigation = useNavigation()
-console.log("ok")
-
   return (
     <View style={styles.header}>
     <TouchableWithoutFeedback onPress={()=>navigation.goBack(null)}>

@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-import { Image, StyleSheet, Text, View,Button } from 'react-native'
-import React,{useState,useEffect} from 'react'
-import {data} from '../Data'
-const CardDetailComponent = () => {
-    const [dataDetail,setDataDetail] = useState(data)
-    const formatRupiah =(rp)=>{
-        const format = rp.toString().split('').reverse().join('')
-        const convert = format.match(/\d{1,3}/g);
-        const rupiah = 'Rp ' + convert.join('.').split('').reverse().join('')
-        return rupiah
-    }
-    const handleTambah =(cart)=>{
-=======
+
 import { Image, StyleSheet, Text, View,Button,TouchableOpacity} from 'react-native'
 import React,{useState,useEffect} from 'react'
 import {data} from '../Data'
@@ -23,7 +10,6 @@ const CardDetailComponent = () => {
     const [carts,setCarts] = useState([])
     const handleTambah =(cart)=>{
     setCarts([...carts,cart])
->>>>>>> dev
    const prod = dataDetail.find((ids)=>ids.id === cart.id)
    prod.jumlah+=1
    const updateProd = dataDetail.map((ids)=>{
@@ -31,16 +17,13 @@ const CardDetailComponent = () => {
     return ids
     
    })
-<<<<<<< HEAD
-   setDataDetail(updateProd)
-    }
-=======
+
 
    setDataDetail(updateProd)
     }
 
    
->>>>>>> dev
+
     const handleKurang =(cart)=>{
         const prod = dataDetail.find((ids)=>ids.id === cart.id)
         if(prod.jumlah == 0){
@@ -56,16 +39,7 @@ const CardDetailComponent = () => {
         setDataDetail(updateProd)
          }
 
-<<<<<<< HEAD
-    const hasilkan = (id,harga)=>{
-      
-    }
-    useEffect(()=>{
 
-    },[dataDetail])
-  return (
-    <View style={styles.container}>
-=======
     const handleCheckOut=()=>{
     const unique = [...new Set(carts)]
     setStore(unique)
@@ -78,7 +52,7 @@ const CardDetailComponent = () => {
   return (
     <>
         <View style={styles.container}>
->>>>>>> dev
+
    <View style={styles.containerCard}>
    {dataDetail.map((cards,index)=>{
     return(
@@ -94,35 +68,23 @@ const CardDetailComponent = () => {
         </View>
         <View>
          <View style={styles.dataTambah}>
-<<<<<<< HEAD
-        <View style={{ backgroundColor:"red",width:30,borderRadius:20}}>
-            <Button 
-            title="+"
-            onPress={()=>handleTambah(cards)} 
-           style={{ color:'red',paddingVertical:20 }}
-            />
-=======
+
+
         <View style={{}}>
            <TouchableOpacity onPress={()=>handleKurang(cards)} style={styles.button}>
             <Text style={styles.textbutton}>-</Text>
            </TouchableOpacity>
->>>>>>> dev
+
         </View>
         <View>
            <Text style={{ fontWeight: 'bold',fontSize:15,color:'black' }}>{cards.jumlah}</Text>
         </View>
         <View>
-<<<<<<< HEAD
-            <Button 
-            title="-"
-            onPress={()=>handleKurang(cards)}
-            style={{ color:'red', backgroundColor:'black'}}
-            />
-=======
+
         <TouchableOpacity onPress={()=>handleTambah(cards)} style={styles.button}>
             <Text style={styles.textbutton}>+</Text>
            </TouchableOpacity>
->>>>>>> dev
+
         </View>
          </View>
         </View>
@@ -131,12 +93,10 @@ const CardDetailComponent = () => {
    })}
    </View>
     </View>
-<<<<<<< HEAD
-=======
+
     <ButtonCheckOut handleCheckOut={()=>handleCheckOut()}/>
     </>
 
->>>>>>> dev
   )
 }
 
@@ -179,9 +139,6 @@ const styles = StyleSheet.create({
         marginRight:20
     },
     button : {
-<<<<<<< HEAD
-       
-=======
        width:30,
      paddingTop:7,
        backgroundColor: '#EEEEEE',
@@ -197,6 +154,6 @@ const styles = StyleSheet.create({
    flex:1,
    
 
->>>>>>> dev
+
     }
 })
