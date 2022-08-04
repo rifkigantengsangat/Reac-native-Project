@@ -3,7 +3,9 @@ import React,{useState,useEffect} from 'react'
 import {data} from '../Data'
 import { Store } from '../Context'
 import ButtonCheckOut from './ButtonCheckOut'
+import { useNavigation } from '@react-navigation/native';
 const CardDetailComponent = () => {
+    const navigation = useNavigation()
     const {setStore,store,formatRupiah} = Store()
     const [dataDetail,setDataDetail] = useState(data)
     const [carts,setCarts] = useState([])
@@ -39,7 +41,7 @@ const CardDetailComponent = () => {
     const handleCheckOut=()=>{
     const unique = [...new Set(carts)]
     setStore(unique)
-    console.log(store)
+    navigation.navigate("CheckOut")
     }
     useEffect(()=>{
 
