@@ -21,8 +21,6 @@ const CardDetailComponent = () => {
 
    setDataDetail(updateProd)
     }
-
-   
     const handleKurang =(cart)=>{
         const prod = dataDetail.find((ids)=>ids.id === cart.id)
         if(prod.jumlah == 0){
