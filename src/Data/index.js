@@ -10,7 +10,7 @@ export const data = [
     title :"T-Shirt",
     harga: 1000,
     kg :1,
-    jumlah :1,
+    jumlah :0,
 },
 {
 id:2,
@@ -18,7 +18,7 @@ icon : celana,
 title :"Shorts",
 harga: 2000,
 kg :1,
-jumlah:1,
+jumlah:0,
 } ,
 {
     id:3,
@@ -26,7 +26,7 @@ jumlah:1,
     title :"cardigan",
     harga: 3000,
     kg :1,
-    jumlah:1,
+    jumlah:0,
     } ,
     {
         id:4,
@@ -34,7 +34,7 @@ jumlah:1,
         title :"dress",
         harga: 5000,
         kg :1,
-        jumlah :1,
+        jumlah :0,
         } ,
         {
             id:5,
@@ -42,7 +42,7 @@ jumlah:1,
             title :"other",
             harga: 5000,
             kg :1,
-            jumlah:1
+            jumlah:0
             } ,
         
 

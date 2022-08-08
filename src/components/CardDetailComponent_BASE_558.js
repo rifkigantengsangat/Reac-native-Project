@@ -1,12 +1,9 @@
-
 import { Image, StyleSheet, Text, View,Button,TouchableOpacity} from 'react-native'
 import React,{useState,useEffect} from 'react'
 import {data} from '../Data'
 import { Store } from '../Context'
 import ButtonCheckOut from './ButtonCheckOut'
-import { useNavigation } from '@react-navigation/native';
 const CardDetailComponent = () => {
-    const navigation = useNavigation()
     const {setStore,store,formatRupiah} = Store()
     const [dataDetail,setDataDetail] = useState(data)
     const [carts,setCarts] = useState([])
@@ -20,10 +17,10 @@ const CardDetailComponent = () => {
     
    })
 
-
    setDataDetail(updateProd)
     }
 
+   
     const handleKurang =(cart)=>{
         const prod = dataDetail.find((ids)=>ids.id === cart.id)
         if(prod.jumlah == 0){
@@ -39,11 +36,10 @@ const CardDetailComponent = () => {
         setDataDetail(updateProd)
          }
 
-
     const handleCheckOut=()=>{
     const unique = [...new Set(carts)]
     setStore(unique)
-    navigation.navigate("CheckOut")
+    console.log(store)
     }
     useEffect(()=>{
 
@@ -52,7 +48,6 @@ const CardDetailComponent = () => {
   return (
     <>
         <View style={styles.container}>
-
    <View style={styles.containerCard}>
    {dataDetail.map((cards,index)=>{
     return(
@@ -68,23 +63,18 @@ const CardDetailComponent = () => {
         </View>
         <View>
          <View style={styles.dataTambah}>
-
-
         <View style={{}}>
            <TouchableOpacity onPress={()=>handleKurang(cards)} style={styles.button}>
             <Text style={styles.textbutton}>-</Text>
            </TouchableOpacity>
-
         </View>
         <View>
            <Text style={{ fontWeight: 'bold',fontSize:15,color:'black' }}>{cards.jumlah}</Text>
         </View>
         <View>
-
         <TouchableOpacity onPress={()=>handleTambah(cards)} style={styles.button}>
             <Text style={styles.textbutton}>+</Text>
            </TouchableOpacity>
-
         </View>
          </View>
         </View>
@@ -93,7 +83,6 @@ const CardDetailComponent = () => {
    })}
    </View>
     </View>
-
     <ButtonCheckOut handleCheckOut={()=>handleCheckOut()}/>
     </>
 
@@ -153,7 +142,6 @@ const styles = StyleSheet.create({
     buttonCheckout :{
    flex:1,
    
-
 
     }
 })
